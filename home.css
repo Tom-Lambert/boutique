@@ -1,0 +1,206 @@
+body{
+	font-family:Arnoldboecklin, fantasy;
+	font-size:18px;
+  background-image:url("background.jpg");
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+
+.menu {
+  background-color: #333;
+  color:#FF8C00;
+	display:block;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  position:fixed;
+  width:100%;
+  z-index: 1000;
+}
+.menu, .menu ul{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+}
+.menu li{
+display:inline-block;
+position:relative;
+text-align:left;
+}
+.menu ul li{
+display:inherit;
+}
+.menu ul{
+position:absolute;
+z-index: 1000;
+max-height:0;
+left: 0;
+right: 0;
+overflow:hidden;
+
+}
+.menu li:hover ul{
+max-height:50em;
+background-color:#333;
+}
+/* les a href */
+.menu a{
+text-decoration:none;
+display:block;
+padding:8px 32px;
+color:#fff;
+border-radius:10px;
+}
+.menu ul a{
+padding:8px 3px;
+
+}
+.menu li:hover li a{
+color:#fff;
+background-color:#333;
+}
+.menu li:hover a, .menu li li:hover a{
+color:#FF8C00;
+background-color:#1f1f1f;
+
+}
+.menu__right{
+	float:right;
+}
+.menu__left{
+    float:left;
+}
+.house, .option{
+  background-image:url("house.png");
+  background-repeat: no-repeat;
+  padding:none;
+  background-position: center;
+}
+.option{
+  background-image:url("option.png");
+}
+
+#link, #link__option {
+  padding:20px 50px;
+  }
+#link:hover {
+  background-image:url("house_hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+#link__option:active{
+  background-image:url("option_active.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.titre{
+  text-transform: uppercase;
+  border-radius:0 ;
+  padding:8px 32px;
+  color:#FF8C00;
+}
+.break__right{
+  box-shadow:10px 0 5px -10px black;
+}
+.break__left{
+  box-shadow:-10px 0 5px -10px black;
+}
+.titre__first{
+  padding-top:50px;
+  margin:0;
+}
+
+/*
+*#############################################################################################################
+*/
+@media screen and (max-width:540px) {
+  .menu{
+    position:initial;
+  }
+  .menu ul {
+    position:initial;
+  }
+  .menu li {
+    display:block;
+    color:#FF8C00;
+    text-align:center;
+  }
+  .menu li li {
+    max-height:0;
+    transition: all .5s;
+  
+  }
+  .menu li:active li {
+    max-height: 50em;
+  }
+
+  .menu__left, .menu__right{
+    float:none;
+  }
+  .menu__categorie ,.menu__sidebar{
+    border-bottom:2px solid black;
+  }
+  
+}
+
+/*         
+*  ############ ARTICLE ############ 
+*/
+.article{
+  background-image:url("patern.jpg");
+  border-radius:10px;
+  height:320px;
+  margin:20px;
+  width:220px;
+  box-shadow:2px 5px 8px black;
+}
+.article__titre{
+  height:60px;
+  line-height:30px;
+  display:table-cell;
+  vertical-align:middle;
+}
+.article__img{
+  width:190px;
+  margin: 0 auto 15px auto;
+  }
+.article__prix{
+  background-color:#FF8C00;
+  text-align:center;
+  width:100px;
+  border-radius:5px;
+  float:right;
+  padding:8px 3px;
+}
+.article__center {
+  margin: 0 50px;
+}
+.container__background{
+  background-color:rgba(255, 255, 255, 0.5);
+  height:100%;
+  min-height:730px;
+ }
+@media (max-height:730px){
+  .container-background {
+    min-height:1024px;
+  }
+}
+.list{
+  background-image:url("list.png");
+  background-repeat: no-repeat;
+  padding:none;
+  background-position: center;
+}
+#link__list{
+  padding:20px 50px;
+  }
+#link__list:active {
+  background-image:url("list_active.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+

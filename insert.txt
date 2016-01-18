@@ -1,0 +1,30 @@
+catégorie:
+
+INSERT INTO `eboutique`.`categories` (`id_categorie`, `nom`) VALUES (NULL, 'Sonorisation'), (NULL, 'Deejay'), (NULL, 'Eclairage'), (NULL, 'HomeStudio'), (NULL, 'Structure'), (NULL, 'Case'), (NULL, 'Cablerie');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'Enceinte', '1'), (NULL, 'Amplificateur', '1'), (NULL, 'Casque', '1'), (NULL, 'ConsoleDeMixage', '1'), (NULL, 'EffetEtPeripherique', '1');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'Accessoire', '2'), (NULL, 'SacEtHousse', '2'), (NULL, 'PlatineCD', '2'), (NULL, 'ControleurEtLogiciel', '2'), (NULL, 'Mobilier', '2'), (NULL, 'PlatineVinyle', '2'), (NULL, 'TableDeMixage', '2');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'AccesoiresEclairage', '3'), (NULL, 'ProjecteurArchitecturale', '3'), (NULL, 'LumiereNoireEtStrobe', '3'), (NULL, 'BouleAFacette', '3'), (NULL, 'LyreEtScan', '3'), (NULL, 'ControleurEtBloc', '3'), (NULL, 'JeuxDeLumiere', '3'), (NULL, 'LampeAmpoule', '3'), (NULL, 'Laser', '3'), (NULL, 'MachineEtLiquide', '3'), (NULL, 'Tracer', '3');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'CasqueEtAmpliCasque', '4'), (NULL, 'EnregistreurNumerique', '4'), (NULL, 'EffetEtPeripherique', '4'), (NULL, 'MicrophoneDeStudio', '4'), (NULL, 'MobilierDeStudio', '4'), (NULL, 'Monitoring', '4');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'StructureTube', '5'), (NULL, 'StructureEchelle', '5'), (NULL, 'StructureCarree', '5'), (NULL, 'EmphasesEtKitDeJonction', '5'), (NULL, 'StructureEnCercle', '5'), (NULL, 'CrochetsEtElingue', '5'), (NULL, 'PiedDeLevage', '5'), (NULL, 'PiedDeMicro', '5'), (NULL, 'PiedEnceinte', '5');
+
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'FlightCase', '6'), (NULL, 'FlightABS', '6'), (NULL, 'FlightCaseUtilitaire', '6'), (NULL, 'FlightCaseDJ', '6');
+
+
+INSERT INTO `eboutique`.`souscategories` (`id_SousCategorie`, `nom`, `id_categorie`) VALUES (NULL, 'AccessoireCable', '7'), (NULL, 'AdaptateurConnectique', '7'), (NULL, 'CableAudioStudio', '7'), (NULL, 'CableElectriqueLight', '7'), (NULL, 'CableNu', '7');
