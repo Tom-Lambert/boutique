@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/imie/boutique/controllers/sousCategorie.php');
+
+
+    $sousCategorieSonorisation = new Model_SousCategorie();
+    $listeSousCategorieSonorisation = $sousCategorieSonorisation->listSousCategorieSonorisation();
+
+    $sousCategorieDeejay = new Model_SousCategorie();
+    $listeSousCategorieDeejay = $sousCategorieDeejay->listSousCategorieDeejay();
+
+    $sousCategorieEclairage = new Model_SousCategorie();
+    $listeSousCategorieEclairage = $sousCategorieEclairage->listSousCategorieEclairage();
+
+   
+?>
+<!DOCTYPE html> 
 <html lang="fr">
     <head>
         <meta charset="utf-8">
@@ -9,114 +24,80 @@
 
         <link rel="stylesheet" href="bootstrap.css">
         <link rel="stylesheet" href="home.css">
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </head>
     <body> 
         <header>
                 
+
                     <ul class="menu">
-                        <li class="menu__left house"><a href="/imie/boutique/index.php" id="link"></a></li>
+           
+                        <li class="menu__left house menu__list"><a href="/imie/boutique/index.php" class="menu__link--sidebar" id="link"></a></li>
                         <li class="menu__left titre break__right">sono-shop</li>
+                        <li class="menu__list"><a href="#" class="menu__categorie menu__link--sidebar">Sonorisation</a>
+                            <ul class="menu__list--souscategorie">
+                                <?php   
+                                    foreach($listeSousCategorieSonorisation as $sousCategorieSonorisation){
+                                        echo'<li class="menu__list--link"><a href="/imie/boutique/index.php?c=article&a='.$sousCategorieSonorisation['nom'].'" class="menu__link">'.$sousCategorieSonorisation['nom'].'</a></li>';
+                                    }
+                                ?>
+                            </ul>
+                        </li>
+                        <li class="menu__list"><a href="#" class="menu__categorie menu__link--sidebar">Deejay</a>
+                            <ul class="menu__list--souscategorie">
+                                <?php   
+                                    foreach($listeSousCategorieDeejay as $sousCategorieDeejay){
+                                        echo'<li class="menu__list--link"><a href="/imie/boutique/index.php?c=article&a='.$sousCategorieDeejay['nom'].'" class="menu__link">'.$sousCategorieDeejay['nom'].'</a></li>';
+                                    }
+                                ?>
+                            </ul>
+                        </li>
+                        <li class="menu__list"><a href="#" class="menu__categorie menu__link--sidebar">Eclairage</a>
+                            <ul class="menu__list--souscategorie">
+                                <?php   
+                                    foreach($listeSousCategorieEclairage as $sousCategorieEclairage){
+                                        echo'<li class="menu__list--link"><a href="/imie/boutique/index.php?c=article&a='.$sousCategorieEclairage['nom'].'" class="menu__link">'.$sousCategorieEclairage['nom'].'</a></li>';
+                                    }
+                                ?>    
+                            </ul>
+                        </li>
                         
-                        <li><a href="#" class="menu__categorie">Sonorisation</a>
-                            <ul>
-                                <li><a href="/imie/boutique/index.php?c=article&a=enceinte">Enceinte</a></li>
-                                <li><a href="/imie/boutique/index.php?c=article&a=amplificateur">Amplificateur</a></li>
-                                <li><a href="/imie/boutique/index.php?c=article&a=casque">Casque</a></li>
-                                <li><a href="/imie/boutique/index.php?c=article&a=consoleDeMixage">Console De Mixage</a></li>
-                                <li><a href="/imie/boutique/index.php?c=article&a=effetPeripherique">Effet et périphérique</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">Deejay</a>
-                            <ul>
-                                <li><a href="#">Accessoire</a></li>
-                                <li><a href="#">Sac et housse</a></li>
-                                <li><a href="#">Platine CD</a></li>
-                                <li><a href="#">Controleur et logiciel</a></li>
-                                <li><a href="#">Mobilier</a></li>
-                                <li><a href="#">Platine Vinyle</a></li>
-                                <li><a href="#">Table de mixage</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">Eclairage</a>
-                            <ul>
-                                <li><a href="#">Accesoires</a></li>
-                                <li><a href="#">Projecteur rchitectural</a></li>
-                                <li><a href="#">Lumière noire et strobe</a></li>
-                                <li><a href="#">Boule à facette</a></li>
-                                <li><a href="#">Lyre et scan</a></li>
-                                <li><a href="#">Controleur et bloc</a></li>
-                                <li><a href="#">Jeux de lumière</a></li>
-                                <li><a href="#">Lampe/Ampoule</a></li>
-                                <li><a href="#">Laser</a></li>
-                                <li><a href="#">Machine et liquide</a></li>
-                                <li><a href="#">Tracer</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">HomeStudio</a>
-                            <ul>
-                                <li><a href="#">Casque et ampli casque</a></li>
-                                <li><a href="#">Enregistreur numérique</a></li>
-                                <li><a href="#">Effet et périphérique</a></li>
-                                <li><a href="#">Microphone de studio</a></li>
-                                <li><a href="#">Mobilier de studio</a></li>
-                                <li><a href="#">Monitoring</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">Structure</a>
-                            <ul>
-                                <li><a href="#">Structure tube</a></li>
-                                <li><a href="#">Structure échelle</a></li>
-                                <li><a href="#">Structure carrée</a></li>
-                                <li><a href="#">Emphases et kit de jonction</a></li>
-                                <li><a href="#">Structure en cercle</a></li>
-                                <li><a href="#">Crochets et élingue</a></li>
-                                <li><a href="#">Pied de levage</a></li>
-                                <li><a href="#">Pied de micro</a></li>
-                                <li><a href="#">Pied d'enceinte</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">Case</a>
-                            <ul>
-                                <li><a href="#">Flight case</a></li>
-                                <li><a href="#">Flight ABS</a></li>
-                                <li><a href="#">Flight case utilitaire</a></li>
-                                <li><a href="#">Flight case DJ</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="menu__categorie">Cablerie</a>
-                            <ul>
-                                <li><a href="#">Accessoire cable</a></li>
-                                <li><a href="#">Adaptateur/connectique</a></li>
-                                <li><a href="#">Cable audio studio</a></li>
-                                <li><a href="#">Cable electrique/light</a></li>
-                                <li><a href="#">Cable nu</a></li>
-                            </ul>
-                        </li>
                     
-               
+                        
                         <?php if (isset($_SESSION['pseudo'])) {
-                            echo '<li class="menu__right"><a href="#" class="menu__sidebar">bonjour '.$_SESSION['pseudo'].'</a>' ;
-                            echo '<li class="menu__right"><a href="#" class="menu__sidebar option" id="link__option"></a>';
-                            echo '<ul>
-                                    <li><a href="/imie/boutique/index.php?c=user&a=deconnexion">Déconnexion</a></li>
-                                    <li><a href="/imie/boutique/index.php?c=user&a=edit">Modifier</a></li>
-                                  </ul>';
+                                                        echo '<li class="menu__right hello">bonjour '.$_SESSION['pseudo'].'</li>';
+                            echo '<li class="menu__right menu__list"><a href="#" class="menu__sidebar option menu__link--sidebar" id="link__option"></a>';
+                            echo '<ul class="menu__list--souscategorie">
+                                    <li class="menu__list--link"><a href="/imie/boutique/index.php?c=user&a=deconnexion" class="menu__link">Déconnexion</a></li>
+                                    <li class="menu__list--link"><a href="/imie/boutique/index.php?c=user&a=view" class="menu__link">Modifier profil</a></li>';
+
+                            if ($_SESSION['pseudo'] == 'admin') {
+                                
+
+                                echo '<li class="menu__list--link"><a href="/imie/boutique/index.php?c=article&a=list" class="menu__link">Gérer articles</a></li>';
+                                echo '<li class="menu__list--link"><a href="/imie/boutique/index.php?c=user&a=list" class="menu__link">Gérer Profils</a></li>';
+                            }
+                            echo '</ul></li>';
                         }
                         else
                         { ?>
-                        <li class="menu__right"><a href="#" class="menu__sidebar">Connexion</a>
-                            <ul>
-                                <li><a href="/imie/boutique/index.php?c=user&a=connexion">Connexion</a></li>
-                                <li><a href="/imie/boutique/index.php?c=user&a=inscription">Inscription</a></li>
+                        <li class="menu__right menu__list"><a href="#" class="menu__sidebar menu__link--sidebar">Connexion</a>
+                            <ul class="menu__list--souscategorie ">
+                                <li class="menu__list--link"><a href="/imie/boutique/index.php?c=user&a=connexion" class="menu__link">Connexion</a></li>
+                                <li class="menu__list--link"><a href="/imie/boutique/index.php?c=user&a=inscription" class="menu__link">Inscription</a></li>
                             </ul>
                         </li>
                         <?php } ?>
-                        <li class="menu__right break__left"><a href="" class="menu__sidebar">Contact</a></li>
+                        <li class="menu__right break__left menu__list"><a href="/imie/boutique/index.php?c=contact&a=contact" class="menu__sidebar menu__link--sidebar">Contact</a></li>
                         </li>
 
                     </ul>
                 
            
         </header>  
-    <div class="container container__background">
-        <div class="row">
+        <div class="footer__position">
+            <div class="container container__background">
+                <div class="row">
+

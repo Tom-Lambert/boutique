@@ -8,9 +8,10 @@
 				$this->db = DB::getInstance();
 			}
 
-			public function addInscription($nom,$prenom,$age,$pseudo,$email,$mdp,$nbRue,$adresse,$codePostal)
+			public function addInscription($nom,$prenom,$age,$pseudo,$email,$mdp,$nbRue,$adresse,$ville,$codePostal)
 			{
-				$query = 'INSERT INTO utilisateurs(nom, prenom, age, pseudo, email, mdp, nbRue, adresse, codePostal) VALUES (:nom, :prenom, :age, :pseudo, :email, :mdp, :nbRue, :adresse, :codePostal)';
+				$query = 'INSERT INTO utilisateurs(nom, prenom, age, pseudo, email, mdp, nbRue, adresse,ville, codePostal) 
+				VALUES (:nom, :prenom, :age, :pseudo, :email, :mdp, :nbRue, :adresse, :ville, :codePostal)';
 				$tab = array(
 				'nom' => $nom,
 				'prenom' => $prenom,
@@ -20,6 +21,7 @@
 				'mdp' => $mdp,
 				'nbRue' => $nbRue,
 				'adresse' => $adresse,
+				'ville' => $ville,
 				'codePostal' =>$codePostal
 				);
 
@@ -31,6 +33,12 @@
 				$resultat = $this->db->get($query);
 				return $resultat;
 			}
-		}
+
+			public function listUser() {
+				$query = "SELECT * FROM utilisateurs;";
+				$resultat = $this->db->get($query);
+				return $resultat;
+			}
+	}
 
 ?>

@@ -15,6 +15,7 @@
 				$check_password = htmlspecialchars($_POST['check_password']);
 				$nbRue = htmlspecialchars($_POST['nbRue']);
 				$adresse = htmlspecialchars($_POST['adresse']);
+				$ville = htmlspecialchars($_POST['ville']);
 				$codePostal = htmlspecialchars($_POST['codePostal']);
 
 				$id = new Model_Inscription();
@@ -46,17 +47,21 @@
 					}
 					require_once($_SERVER['DOCUMENT_ROOT']."imie/boutique/views/inscrit/error.php");
 				}
-				else
-				{
+				else{
 					$inscription = new Model_Inscription();
-					$DetailInscription = $inscription->addInscription($nom,$prenom,$age,$pseudo,$email,$mdp,$nbRue,$adresse,$codePostal);
+					$DetailInscription = $inscription->addInscription($nom,$prenom,$age,$pseudo,$email,$mdp,$nbRue,$adresse,$ville,$codePostal);
 					require_once($_SERVER['DOCUMENT_ROOT']."imie/boutique/views/inscrit/bravo.php");
 				}
 			}
-			else
-			{
+			else{
 				require_once($_SERVER['DOCUMENT_ROOT']."/imie/boutique/views/users/inscription.php");	
 			}	
 		}
+
+		public function listUser(){
+		$inscription = new Model_Inscription();
+		$listeUser = $inscription->listUser();
+		require_once($_SERVER['DOCUMENT_ROOT'].'/imie/boutique/views/inscrit/list.php');
+	}
 	}
 ?>
